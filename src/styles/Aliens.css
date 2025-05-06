@@ -1,0 +1,523 @@
+.crab-container, .squid-container, .octopus-container {
+  display: grid;
+  grid-gap: 0;
+}
+
+.crab-container {
+  grid-template-columns: repeat(12, 2px);
+  grid-template-rows: repeat(10, 2px);
+  width: 24px;
+  height: 20px;
+}
+
+.squid-container {
+  grid-template-columns: repeat(10, 2px);
+  grid-template-rows: repeat(10, 2px);
+  width: 20px;
+  height: 20px;
+}
+
+.octopus-container {
+  grid-template-columns: repeat(16, 2px);
+  grid-template-rows: repeat(10, 2px);
+  width: 32px;
+  height: 20px;
+}
+
+/* Nave Enemiga */
+.enemy-ship-container {
+  display: grid;
+  grid-template-columns: repeat(18, 2px);
+  grid-template-rows: repeat(9, 2px);
+  grid-gap: 0;
+  width: 36px;
+  height: 18px;
+}
+
+.enemy-ship-container .itemNE {
+  grid-column: 7/13;
+  grid-row: 2/3;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE2 {
+  grid-column: 5/15;
+  grid-row: 3/4;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE3 {
+  grid-column: 4/16;
+  grid-row: 4/5;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE4 {
+  grid-column: 3/5;
+  grid-row: 5/6;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE5 {
+  grid-column: 6/8;
+  grid-row: 5/6;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE6 {
+  grid-column: 9/11;
+  grid-row: 5/6;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE7 {
+  grid-column: 12/14;
+  grid-row: 5/6;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE8 {
+  grid-column: 15/17;
+  grid-row: 5/6;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE9 {
+  grid-column: 2/18;
+  grid-row: 6/7;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE10 {
+  grid-column: 4/7;
+  grid-row: 7/8;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE11 {
+  grid-column: 9/11;
+  grid-row: 7/8;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE12 {
+  grid-column: 13/16;
+  grid-row: 7/8;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE13 {
+  grid-column: 5/6;
+  grid-row: 8/9;
+  background-color: red;
+}
+
+.enemy-ship-container .itemNE14 {
+  grid-column: 14/15;
+  grid-row: 8/9;
+  background-color: red;
+}
+
+/* Defensas */
+.defense-container {
+  display: grid;
+  grid-template-columns: repeat(33, 1px);
+  grid-template-rows: repeat(20, 1px);
+  width: 33px;
+  height: 20px;
+}
+
+.defense-item-1 {
+  grid-column: 7/27;
+  grid-row: 1/3;
+  background-color: #00FF00;
+}
+
+.defense-item-2 {
+  grid-column: 5/29;
+  grid-row: 3/5;
+  background-color: #00FF00;
+}
+
+.defense-item-3 {
+  grid-column: 3/31;
+  grid-row: 5/7;
+  background-color: #00FF00;
+}
+
+.defense-item-4 {
+  grid-column: 1/33;
+  grid-row: 7/11;
+  background-color: #00FF00;
+}
+
+.defense-item-5 {
+  grid-column: 1/14;
+  grid-row: 11/12;
+  background-color: #00FF00;
+}
+
+.defense-item-6 {
+  grid-column: 18/33;
+  grid-row: 11/12;
+  background-color: #00FF00;
+}
+
+.defense-item-7 {
+  grid-column: 1/12;
+  grid-row: 12/13;
+  background-color: #00FF00;
+}
+
+.defense-item-8 {
+  grid-column: 20/33;
+  grid-row: 12/13;
+  background-color: #00FF00;
+}
+
+.defense-item-9 {
+  grid-column: 1/10;
+  grid-row: 13/20;
+  background-color: #00FF00;
+}
+
+.defense-item-10 {
+  grid-column: 22/33;
+  grid-row: 13/20;
+  background-color: #00FF00;
+}
+
+/* Nave Aliada */
+.player-ship-container {
+  display: grid;
+  grid-template-columns: repeat(17, 2px);
+  grid-template-rows: repeat(9, 2px);
+  width: 34px;
+  height: 18px;
+}
+
+.player-item-1 {
+  grid-column: 9/10;
+  grid-row: 2/3;
+  background-color: #00FF00;
+}
+
+.player-item-2 {
+  grid-column: 8/11;
+  grid-row: 3/5;
+  background-color: #00FF00;
+}
+
+.player-item-3 {
+  grid-column: 3/16;
+  grid-row: 5/6;
+  background-color: #00FF00;
+}
+
+.player-item-4 {
+  grid-column: 2/17;
+  grid-row: 6/9;
+  background-color: #00FF00;
+}
+
+/* Animaciones de movimiento */
+@keyframes derecha { 
+  0% { transform: translateX(0px) }
+  33% { transform: translateX(10px) }
+  66% { transform: translateX(0px) }
+  90% { transform: translateX(-10px) }
+  100% { transform: translateX(0px) }
+}
+
+@keyframes izquierda {  
+  0% { transform: translateX(0px) }
+  33% { transform: translateX(-10px) }
+  66% { transform: translateX(0px) }
+  90% { transform: translateX(10px) }
+  100% { transform: translateX(0px) }
+}
+
+/* Estilos para los items del Crab */
+.crab-container {
+  grid-template-columns: repeat(12, 2px);
+  grid-template-rows: repeat(10, 2px);
+  margin: 0 auto;
+}
+
+.crab-container .item1 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-color: white;
+}
+
+.crab-container .item2 {
+  grid-column: 5/6;
+  grid-row: 3/5;
+  background-color: white;
+}
+
+.crab-container .item3 {
+  grid-column: 4/5;
+  grid-row: 4/9;
+  background-color: white;
+}
+
+.crab-container .item4 {
+  grid-column: 9/10;
+  grid-row: 2/3;
+  background-color: white;
+}
+
+.crab-container .item5 {
+  grid-column: 6/8;
+  grid-row: 4/5;
+  background-color: white;
+}
+
+.crab-container .item6 {
+  grid-column: 8/9;
+  grid-row: 3/5;
+  background-color: white;
+}
+
+.crab-container .item7 {
+  grid-column: 9/10;
+  grid-row: 4/9;
+  background-color: white;
+}
+
+.crab-container .item8 {
+  grid-column: 10/11;
+  grid-row: 5/7;
+  background-color: white;
+}
+
+.crab-container .item9 {
+  grid-column: 11/12;
+  grid-row: 6/9;
+  background-color: white;
+}
+
+.crab-container .item10 {
+  grid-column: 3/4;
+  grid-row: 5/7;
+  background-color: white;
+}
+
+.crab-container .item11 {
+  grid-column: 2/3;
+  grid-row: 6/9;
+  background-color: white;
+}
+
+.crab-container .item12 {
+  grid-column: 5/9;
+  grid-row: 6/8;
+  background-color: white;
+}
+
+.crab-container .item13 {
+  grid-column: 6/8;
+  grid-row: 5/6;
+  background-color: white;
+}
+
+.crab-container .item14 {
+  grid-column: 5/6;
+  grid-row: 9/10;
+  background-color: white;
+}
+
+.crab-container .item15 {
+  grid-column: 8/9;
+  grid-row: 9/10;
+  background-color: white;
+}
+
+/* Estilos para los items del Squid */
+.squid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 2px);
+  grid-template-rows: repeat(10, 2px);
+  grid-gap: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.squid-container .item1 {
+  grid-column: 5/7;
+  grid-row: 2/3;
+  background-color: white;
+}
+
+.squid-container .item2 {
+  grid-column: 4/8;
+  grid-row: 3/4;
+  background-color: white;
+}
+
+.squid-container .item3 {
+  grid-column: 3/9;
+  grid-row: 4/5;
+  background-color: white;
+}
+
+.squid-container .item4 {
+  grid-column: 2/10;
+  grid-row: 5/7;
+  background-color: white;
+}
+
+.squid-container .item5 {
+  grid-column: 4/5;
+  grid-row: 5/6;
+  background-color: black;
+}
+
+.squid-container .item6 {
+  grid-column: 7/8;
+  grid-row: 5/6;
+  background-color: black;
+}
+
+.squid-container .item7 {
+  grid-column: 4/5;
+  grid-row: 7/8;
+  background-color: white;
+}
+
+.squid-container .item8 {
+  grid-column: 7/8;
+  grid-row: 7/8;
+  background-color: white;
+}
+
+.squid-container .item9 {
+  grid-column: 3/9;
+  grid-row: 8/9;
+  background-color: white;
+}
+
+.squid-container .item10 {
+  grid-column: 7/8;
+  grid-row: 8/9;
+  background-color: black;
+}
+
+.squid-container .item11 {
+  grid-column: 4/5;
+  grid-row: 8/9;
+  background-color: black;
+}
+
+.squid-container .item12 {
+  grid-column: 2/10;
+  grid-row: 9/10;
+  background-color: white;
+}
+
+.squid-container .item13 {
+  grid-column: 3/4;
+  grid-row: 9/10;
+  background-color: black;
+}
+
+.squid-container .item14 {
+  grid-column: 5/7;
+  grid-row: 9/10;
+  background-color: black;
+}
+
+.squid-container .item15 {
+  grid-column: 8/9;
+  grid-row: 9/10;
+  background-color: black;
+}
+
+/* Estilos para los items del Octopus */
+.octopus-container {
+  display: grid;
+  grid-template-columns: repeat(16, 2px);
+  grid-template-rows: repeat(10, 2px);
+  grid-gap: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.octopus-container .item1 {
+  grid-column: 7/11;
+  grid-row: 2/3;
+  background-color: white;
+}
+
+.octopus-container .item2 {
+  grid-column: 3/15;
+  grid-row: 3/4;
+  background-color: white;
+}
+
+.octopus-container .item3 {
+  grid-column: 2/16;
+  grid-row: 4/7;
+  background-color: white;
+}
+
+.octopus-container .item4 {
+  grid-column: 6/8;
+  grid-row: 5/6;
+  background-color: black;
+}
+
+.octopus-container .item5 {
+  grid-column: 10/12;
+  grid-row: 5/6;
+  background-color: black;
+}
+
+.octopus-container .item6 {
+  grid-column: 4/8;
+  grid-row: 7/8;
+  background-color: white;
+}
+
+.octopus-container .item7 {
+  grid-column: 10/14;
+  grid-row: 7/8;
+  background-color: white;
+}
+
+.octopus-container .item8 {
+  grid-column: 3/5;
+  grid-row: 7/8;
+  background-color: white;
+}
+
+.octopus-container .item9 {
+  grid-column: 3/15;
+  grid-row: 8/9;
+  background-color: white;
+}
+
+.octopus-container .item10 {
+  grid-column: 5/8;
+  grid-row: 8/9;
+  background-color: black;
+}
+
+.octopus-container .item11 {
+  grid-column: 10/13;
+  grid-row: 8/9;
+  background-color: black;
+}
+
+.octopus-container .item12 {
+  grid-column: 4/14;
+  grid-row: 9/10;
+  background-color: white;
+}
+
+.octopus-container .item13 {
+  grid-column: 7/11;
+  grid-row: 9/10;
+  background-color: black;
+}

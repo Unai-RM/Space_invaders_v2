@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0e0e0e;
+    padding: 20px;
+    position: relative;
+    gap: 30px;
+}
+
+.retro-monitor {
+    position: relative;
+    transform: perspective(1000px) rotateX(5deg);
+    transform-style: preserve-3d;
+}
+
+.game-title {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #fff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 20px rgba(255,255,255,0.3),
+        0 0 30px rgba(255,255,255,0.1);
+    letter-spacing: 2px;
+    background: transparent;
+    margin: 0;
+    transform: translateZ(20px);
+}
+
+.copyright {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #666;
+    font-size: 0.8rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    background: transparent;
+    transform: translateZ(20px);
+}
+
+.monitor-frame {
+    background-color: #2f3f2f;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 
+        0 0 0 2px #3a3a3a,
+        0 0 0 4px #1f1f1f,
+        0 0 0 6px #3a3a3a,
+        0 20px 30px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+}
+
+.screen-bezel {
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.game-content {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    background-color: black;
+    border: 2px solid #3a3a3a;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* Scanline effect */
+.game-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 255, 0, 0.02) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 2;
+    animation: scanline 10s linear infinite;
+}
+
+/* Retro Mouse */
+.retro-mouse {
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    transform: rotate(-15deg);
+}
+
+.mouse-body {
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(45deg, #2f3f2f, #1a4c1a);
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 
+        -2px -2px 4px rgba(255,255,255,0.1),
+        2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.mouse-button {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border-radius: 15px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.mouse-cable {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 8px;
+    height: 150px;
+    background: #2f3f2f;
+    transform-origin: top;
+    transform: translateX(-50%) rotate(15deg);
+    border-radius: 4px;
+    box-shadow: 
+        -1px -1px 2px rgba(255,255,255,0.1),
+        1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(600px);
+    }
+}
+
+/* Monitor outer case */
+.game-content::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -60px;
+    background-color: #2f3f2f;
+    border-radius: 15px;
+    z-index: -1;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Monitor stand */
+.game-content::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a3a2a;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.3);
+}
+
+/* Screen scanlines effect */
+.game-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.game-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.game-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.aliens-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 0 120px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animaciones específicas para cada fila de aliens */
+.aliens-row {
+    animation: alienBob 10s infinite;
+}
+
+.aliens-row-5 { animation-delay: 0s; }
+.aliens-row-4 { animation-delay: 0.1s; }
+.aliens-row-3 { animation-delay: 0.2s; }
+.aliens-row-2 { animation-delay: 0.3s; }
+.aliens-row-1 { animation-delay: 0.4s; }
+
+@keyframes enemyShipMove {
+    0% {
+        transform: translateX(0);
+    }
+    15% {
+        transform: translateX(185px);
+    }
+    20% {
+        transform: translateX(185px);
+    }
+    35% {
+        transform: translateX(370px);
+    }
+    40% {
+        transform: translateX(370px);
+    }
+    55% {
+        transform: translateX(555px);
+    }
+    60% {
+        transform: translateX(555px);
+    }
+    75% {
+        transform: translateX(370px);
+    }
+    80% {
+        transform: translateX(370px);
+    }
+    90% {
+        transform: translateX(185px);
+    }
+    95% {
+        transform: translateX(185px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes alienBob {
+    0%{
+        transform: translateX(0);
+    }
+    5%{
+        transform: translateX(7px);
+    }
+    10%{
+        transform: translateX(14px);
+    }
+    15%{
+        transform: translateX(21px);
+    }
+    20%{
+        transform: translateX(28px);
+    }
+    25%{
+        transform: translateX(35px);
+    }
+    30%{
+        transform: translateX(28px);
+    }
+    35%{
+        transform: translateX(21px);
+    }
+    40%{
+        transform: translateX(14px);
+    }
+    45%{
+        transform: translateX(7px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    55%{
+        transform: translateX(-7px);
+    }
+    60%{
+        transform: translateX(-14px);
+    }
+    65%{
+        transform: translateX(-21px);
+    }
+    70%{
+        transform: translateX(-28px);
+    }
+    75%{
+        transform: translateX(-35px);
+    }
+    80%{
+        transform: translateX(-28px);
+    }
+    85%{
+        transform: translateX(-21px);
+    }
+    90%{
+        transform: translateX(-14px);
+    }
+    95%{
+        transform: translateX(-7px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.aliens-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.enemy-ship {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 90px;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: enemyShipMove 15s infinite;
+}
+
+.defenses-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.aliens-row > * {
+    flex: 0 0 auto; /* No crecer, no encoger, tamaño automático */
+    display: flex;
+    justify-content: center;
+    width: 32px; /* Ancho del contenedor más grande */
+}
+
+/* Ajustes específicos para cada tipo */
+.aliens-row .squid-container {
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.aliens-row .crab-container {
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.aliens-row .octopus-container {
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.defenses-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    padding: 0 90px;
+}

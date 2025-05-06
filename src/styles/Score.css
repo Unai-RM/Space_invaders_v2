@@ -1,0 +1,26 @@
+.score-container {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-family: monospace;
+  color: white;
+  font-size: 14px;
+}
+
+.score-text, .hi-score-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-score, .text-hi-score {
+  margin-bottom: 5px;
+}
+
+.score-value {
+  letter-spacing: 4px;
+}

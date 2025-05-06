@@ -1,0 +1,30 @@
+.game-status {
+  width: 100%;
+  padding: 0 90px;
+}
+
+.status-line {
+  width: 100%;
+  height: 2px;
+  background-color: #00FF00;
+  margin-bottom: 10px;
+}
+
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.lives-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.life-ship {
+  transform: scale(1);
+}
