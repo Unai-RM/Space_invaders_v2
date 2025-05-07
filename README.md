@@ -1,5 +1,7 @@
 # Space_Invaders_v2
 
+🔗 **Demo en vivo:** [https://spaceinvaders2.netlify.app/](https://spaceinvaders2.netlify.app/)
+
 🛠️ Versión en desarrollo del proyecto **Space Invaders** original que creé hace más de 6 años. Esta nueva versión busca reconstruir el aspecto visual del juego aplicando **mejores prácticas de organización de archivos**, estructura de proyecto más limpia y, incorporando **nuevas tecnologías y lenguajes modernos**.
 
 🔗 [Versión original del proyecto](https://github.com/Unai-RM/Space_invaders)
